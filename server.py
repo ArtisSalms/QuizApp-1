@@ -1,3 +1,4 @@
+from re import template
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -13,6 +14,10 @@ def root():
 @app.route('/health')
 def health():
   return "OK"
+
+@app.route('/about')
+def about():
+  return render_template("about.html")
 
 if __name__ == '__main__':
   app.run(debug="true")
